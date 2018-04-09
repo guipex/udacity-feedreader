@@ -53,12 +53,6 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBeTruthy();
          });
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
-
           // Ensures the menu toggle visibility when menu icon is clicked.
           it('toggle visibility when clicked', function() {
             $('.menu-icon-link').click();
@@ -100,13 +94,12 @@ $(function() {
             // load the initial feed and save in the 'entriesTitlesBefore' variable to compare later
             loadFeed(0, function() {
                 entriesTitlesBefore = $('.feed').find("h2").text();
-                done();
-            });
 
-            // load the feed again and save in the 'entriesTitlesAfter' variable to compare later
-            loadFeed(1, function() {
-                entriesTitlesAfter = $('.feed').find("h2").text();
-                done();
+                // load the feed again and save in the 'entriesTitlesAfter' variable to compare later
+                loadFeed(1, function() {
+                    entriesTitlesAfter = $('.feed').find("h2").text();
+                    done();
+                });
             });
          });
 
